@@ -11,7 +11,7 @@
         @if ($newsletterSubscribers->count() == 0)
             <p class="lead"><i>@lang('newsletter_subscriber.index.none')</i></p>
         @else
-            <table class="table">
+            <table class="table table-striped table-hover table-sm">
                 <thead>
                 <tr>
                     <th>@lang('validation.attributes.name')</th>
