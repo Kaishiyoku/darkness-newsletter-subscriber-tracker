@@ -44,3 +44,10 @@ footer {
 
   padding-top: 10em;
 }
+
+h1 {
+  > small {
+    font-size: $h1-font-size * .5;
+    color: $text-muted;
+  }
+}

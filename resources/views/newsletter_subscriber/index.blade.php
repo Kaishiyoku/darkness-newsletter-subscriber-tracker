@@ -2,7 +2,11 @@
 
 @section('content')
     <div class="container">
-        <h1>@lang('newsletter_subscriber.index.title')</h1>
+        <h1>
+            @lang('newsletter_subscriber.index.title')
+
+            <small>{{ $newsletterSubscribers->count() }}</small>
+        </h1>
 
         <p>
             {{ Html::linkRoute('newsletter_subscribers.create', __('newsletter_subscriber.index.add'), null, ['class' => 'btn btn-sm btn-outline-primary']) }}
