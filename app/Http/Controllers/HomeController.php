@@ -9,6 +9,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if (auth()->check()) {
+            return $this->dashboard();
+        }
+
         return view('auth.login');
     }
 
