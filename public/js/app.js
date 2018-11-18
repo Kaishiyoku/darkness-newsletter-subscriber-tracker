@@ -13945,6 +13945,10 @@ try {
     __webpack_require__(16);
 
     $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $('[data-toggle="popover"]').popover();
+
         $('[data-submit]').each(function () {
             var $this = $(this);
 

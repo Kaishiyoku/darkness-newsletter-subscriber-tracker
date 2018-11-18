@@ -23,6 +23,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\NewsletterSubscriber whereProfileUrl($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\NewsletterSubscriber whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string|null $comment
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\NewsletterSubscriber whereComment($value)
  */
 class NewsletterSubscriber extends Model
 {
@@ -32,7 +34,7 @@ class NewsletterSubscriber extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'profile_url', 'post_url',
+        'name', 'profile_url', 'post_url', 'comment',
     ];
 
     /**

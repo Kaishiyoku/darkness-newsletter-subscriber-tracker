@@ -146,6 +146,7 @@ return [
         'name' => 'Name',
         'profile_url' => 'Profile URL',
         'post_url' => 'Post URL',
+        'comment' => 'Comment',
     ],
 
 ];

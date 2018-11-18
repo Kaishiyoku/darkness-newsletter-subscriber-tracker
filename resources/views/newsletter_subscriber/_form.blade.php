@@ -41,6 +41,20 @@
 </div>
 
 <div class="form-group row">
+    {{ Form::label('comment', __('validation.attributes.comment'), ['class' => 'col-lg-2 col-form-label']) }}
+
+    <div class="col-lg-10">
+        {{ Form::textarea('comment', old('comment', $newsletterSubscriber->comment), ['class' => 'form-control' . ($errors->has('comment') ? ' is-invalid' : '')]) }}
+
+        @if ($errors->has('comment'))
+            <div class="invalid-feedback">
+                {{ $errors->first('comment') }}
+            </div>
+        @endif
+    </div>
+</div>
+
+<div class="form-group row">
     <div class="offset-lg-2 col-lg-10">
         {!! Html::decode(Form::button($submitTitle, ['type' => 'submit', 'class' => 'btn btn-primary'])) !!}
     </div>

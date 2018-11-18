@@ -17,6 +17,7 @@
                     <th>@lang('validation.attributes.name')</th>
                     <th>@lang('validation.attributes.profile_url')</th>
                     <th>@lang('validation.attributes.post_url')</th>
+                    <th>@lang('validation.attributes.comment')</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -27,6 +28,13 @@
                             <td>{{ $newsletterSubscriber->name }}</td>
                             <td>{{ $newsletterSubscriber->profile_url }}</td>
                             <td>{{ $newsletterSubscriber->post_url }}</td>
+                            <td>
+                                @if ($newsletterSubscriber->comment)
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="{{ $newsletterSubscriber->comment }}">
+                                        @lang('common.show')
+                                    </button>
+                                @endif
+                            </td>
                             <td>
                                 {{ Html::linkRoute('newsletter_subscribers.edit', __('common.edit'), $newsletterSubscriber) }}
                             </td>
