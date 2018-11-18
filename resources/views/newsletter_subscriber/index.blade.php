@@ -26,8 +26,8 @@
                     @foreach ($newsletterSubscribers as $newsletterSubscriber)
                         <tr>
                             <td>{{ $newsletterSubscriber->name }}</td>
-                            <td>{{ $newsletterSubscriber->profile_url }}</td>
-                            <td>{{ $newsletterSubscriber->post_url }}</td>
+                            <td>{{ Html::link($newsletterSubscriber->profile_url) }}</td>
+                            <td>{{ Html::link($newsletterSubscriber->post_url) }}</td>
                             <td>
                                 @if ($newsletterSubscriber->comment)
                                     <button type="button" class="btn btn-sm btn-outline-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="{{ $newsletterSubscriber->comment }}">
