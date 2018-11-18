@@ -19,5 +19,10 @@ Auth::routes(['register' => false, 'verify' => false]);
 * Logged on users *
 **************** */
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/dashboard', 'HomeController@dashboard')->name('home.dashboard');
+    /* ****************
+    * Administration *
+    **************** */
+    Route::group(['prefix' => '', 'as' => 'admin.', 'middleware' => ['admin']], function () {
+        Route::get('/dashboard', 'HomeController@dashboard')->name('home.dashboard');
+    });
 });
