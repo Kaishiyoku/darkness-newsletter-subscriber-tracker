@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\NewsletterSubscriber;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 
 class NewsletterSubscriberController extends Controller
 {
@@ -107,5 +109,20 @@ class NewsletterSubscriberController extends Controller
         flash()->success(__('newsletter_subscriber.destroy.success'));
 
         return redirect()->route($this->redirectionRoute);
+    }
+
+    public function code()
+    {
+        $date = Carbon::now();
+        $newsletterSubscribers = NewsletterSubscriber::all();
+
+        $prefix = 'Updated as of ' . $date->format('j M Y') . "\n\n";
+        $newsletterSubscriberCode = $prefix . $newsletterSubscribers->reduce(function ($carry, $item) {
+            return $carry . "[url=$item->post_url]$item->name[/url]" . "\n";
+        });
+
+//        dd($newsletterSubscriberCode);
+
+        return view('newsletter_subscriber.code', compact('newsletterSubscriberCode'));
     }
 }

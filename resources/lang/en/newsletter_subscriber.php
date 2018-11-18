@@ -6,6 +6,7 @@ return [
         'title' => 'Newsletter subscribers',
         'add' => 'Add subscriber',
         'none' => 'No subscribers yet.',
+        'get_code' => 'Get subscriber list BBCode',
     ],
     'create' => [
         'success' => 'Subscriber added.',
@@ -15,6 +16,9 @@ return [
     ],
     'destroy' => [
         'success' => 'Subscriber deleted.',
+    ],
+    'code' => [
+        'title' => 'Newsletter subscribers BBCode',
     ],
 
 ];

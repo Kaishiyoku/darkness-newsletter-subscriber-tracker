@@ -24,6 +24,7 @@ Route::group(['middleware' => ['auth']], function () {
     **************** */
     Route::group(['prefix' => '', 'as' => '', 'middleware' => ['admin']], function () {
         Route::get('/dashboard', 'HomeController@dashboard')->name('home.dashboard');
+        Route::get('/newsletter_subscribers/code', 'NewsletterSubscriberController@code')->name('newsletter_subscribers.code');
         Route::resource('newsletter_subscribers', 'NewsletterSubscriberController')->except('show');
     });
 });

@@ -10,5 +10,6 @@ return [
     'nav' => [
         'newsletter_subscribers' => 'Newsletter subscribers',
     ],
+    'back' => 'Back',
 
 ];

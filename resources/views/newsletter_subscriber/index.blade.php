@@ -5,7 +5,9 @@
         <h1>@lang('newsletter_subscriber.index.title')</h1>
 
         <p>
-            <a href="{{ route('newsletter_subscribers.create') }}">@lang('newsletter_subscriber.index.add')</a>
+            {{ Html::linkRoute('newsletter_subscribers.create', __('newsletter_subscriber.index.add'), null, ['class' => 'btn btn-sm btn-outline-primary']) }}
+
+            {{ Html::linkRoute('newsletter_subscribers.code', __('newsletter_subscriber.index.get_code'), null, ['class' => 'btn btn-sm btn-outline-primary']) }}
         </p>
 
         @if ($newsletterSubscribers->count() == 0)
