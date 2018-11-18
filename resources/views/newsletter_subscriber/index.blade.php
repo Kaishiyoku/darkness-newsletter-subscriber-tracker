@@ -29,7 +29,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                    @foreach ($newsletterSubscribers as $newsletterSubscriber)
+                    @foreach ($newsletterSubscribers->get() as $newsletterSubscriber)
                         <tr>
                             <td>{{ $newsletterSubscriber->name }}</td>
                             <td>{{ Html::link($newsletterSubscriber->profile_url) }}</td>

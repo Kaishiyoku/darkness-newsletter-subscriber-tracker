@@ -30,7 +30,7 @@ class NewsletterSubscriberController extends Controller
      */
     public function index()
     {
-        $newsletterSubscribers = NewsletterSubscriber::all();
+        $newsletterSubscribers = NewsletterSubscriber::orderBy('name');
 
         return view('newsletter_subscriber.index', compact('newsletterSubscribers'));
     }
@@ -114,7 +114,7 @@ class NewsletterSubscriberController extends Controller
     public function code()
     {
         $date = Carbon::now();
-        $newsletterSubscribers = NewsletterSubscriber::all();
+        $newsletterSubscribers = NewsletterSubscriber::orderBy('name')->get();
 
         $prefix = 'Updated as of ' . $date->format('j M Y') . "\n\n";
         $newsletterSubscriberCode = $prefix . $newsletterSubscribers->reduce(function ($carry, $item) {
