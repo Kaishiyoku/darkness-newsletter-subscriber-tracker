@@ -22,7 +22,8 @@ Route::group(['middleware' => ['auth']], function () {
     /* ****************
     * Administration *
     **************** */
-    Route::group(['prefix' => '', 'as' => 'admin.', 'middleware' => ['admin']], function () {
+    Route::group(['prefix' => '', 'as' => '', 'middleware' => ['admin']], function () {
         Route::get('/dashboard', 'HomeController@dashboard')->name('home.dashboard');
+        Route::resource('newsletter_subscribers', 'NewsletterSubscriberController')->except('show');
     });
 });

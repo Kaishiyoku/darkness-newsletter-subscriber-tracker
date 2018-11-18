@@ -142,6 +142,10 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'name' => 'Name',
+        'profile_url' => 'Profile URL',
+        'post_url' => 'Post URL',
+    ],
 
 ];
