@@ -7,6 +7,7 @@ return [
         'add' => 'Add subscriber',
         'none' => 'No subscribers yet.',
         'get_code' => 'Get subscriber list BBCode',
+        'forum_thread' => 'Forum thread',
     ],
     'create' => [
         'success' => 'Subscriber added.',

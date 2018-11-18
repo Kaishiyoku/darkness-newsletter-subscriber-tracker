@@ -7,7 +7,11 @@
         <p>
             {{ Html::linkRoute('newsletter_subscribers.create', __('newsletter_subscriber.index.add'), null, ['class' => 'btn btn-sm btn-outline-primary']) }}
 
-            {{ Html::linkRoute('newsletter_subscribers.code', __('newsletter_subscriber.index.get_code'), null, ['class' => 'btn btn-sm btn-outline-primary']) }}
+            {{ Html::linkRoute('newsletter_subscribers.code', __('newsletter_subscriber.index.get_code'), null, ['class' => 'btn btn-sm btn-outline-primary mr-3']) }}
+
+            @if (env('NEWSLETTER_SUBSCRIBER_FORUM_THREAD'))
+                {{ Html::link(env('NEWSLETTER_SUBSCRIBER_FORUM_THREAD'), __('newsletter_subscriber.index.forum_thread'), ['class' => 'btn btn-sm btn-outline-info']) }}
+            @endif
         </p>
 
         @if ($newsletterSubscribers->count() == 0)
