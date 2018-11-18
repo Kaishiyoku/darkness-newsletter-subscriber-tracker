@@ -34,3 +34,13 @@
 .inline {
   display: inline;
 }
+
+.font-sm {
+  font-size: $font-size-sm;
+}
+
+footer {
+  @extend .font-sm;
+
+  padding-top: 10em;
+}

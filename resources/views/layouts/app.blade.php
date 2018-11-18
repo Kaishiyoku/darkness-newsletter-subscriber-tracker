@@ -79,6 +79,19 @@
 
             @yield('content')
         </main>
+
+        <div class="container text-muted">
+            <footer>
+                @if (env('APP_CREATION_YEAR') == date('Y'))
+                    {{ env('APP_CREATION_YEAR') }},
+                @else
+                    {{ env('APP_CREATION_YEAR') }} - {{ date('Y') }},
+                @endif
+
+                {{ env('APP_AUTHOR') }} &bull;
+                v{{ env('APP_VERSION') }}
+            </footer>
+        </div>
     </div>
 </body>
 </html>
