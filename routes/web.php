@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'HomeController@index')->name('home.index');
+
+Auth::routes(['register' => false, 'verify' => false]);
+
+/* ****************
+* Logged on users *
+**************** */
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/dashboard', 'HomeController@dashboard')->name('home.dashboard');
 });
