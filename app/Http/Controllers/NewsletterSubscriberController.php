@@ -116,7 +116,7 @@ class NewsletterSubscriberController extends Controller
         $date = Carbon::now();
         $newsletterSubscribers = NewsletterSubscriber::orderBy('name')->get();
 
-        $prefix = 'Updated as of ' . $date->format('j M Y') . "\n\n";
+        $prefix = '[color=#439F83][size=90]Updated as of ' . $date->format('j M Y') . '[/size][/color]' . "\n\n";
         $newsletterSubscriberCode = $prefix . $newsletterSubscribers->reduce(function ($carry, $item) {
             return $carry . "[url=$item->post_url]$item->name[/url]" . "\n";
         });
