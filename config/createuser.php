@@ -36,4 +36,11 @@ return [
         ],
     ],
 
+    'post_creation_fn' => function (\App\Models\User $user) {
+        $user->email_verified_at = \Illuminate\Support\Carbon::now();
+        $user->save();
+
+        return $user;
+    },
+
 ];
